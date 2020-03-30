@@ -1,7 +1,6 @@
 import os
 import random
 import pandas as pd
-from sklearn.metrics import confusion_matrix
 from sklearn.metrics import accuracy_score
 from sklearn.metrics import classification_report
 
@@ -12,6 +11,7 @@ def load_data(data_file):
     return pd.read_csv(data_file, header = 'infer')
 
 def train_test_split(df, split = 0.2):
+    random.seed(1)
     test = df.sample(frac = split)
     train = df.loc[~df.index.isin(test.index)]
     return train, test
@@ -27,15 +27,12 @@ def logistic_metrics(test, pred):
 #    recall = round(true_pos/(true_pos + false_neg), 4)
 #    print("Precision :", precision)
 #    print("Recall :", recall)
-    
-    results = confusion_matrix(test['target'], test['predictions'])
-    print('Confusion Matrix :')
-    print(results) 
     print('Accuracy Score :', round(accuracy_score(test['target'], test['predictions']), 4))
     print('Report :')
     print(classification_report(test['target'], test['predictions']))
 
 def baseline_random(train, test):
+    random.seed(1)
     predictions = []
     unique_classes = list(set(train['target'].values))
     for row in test.iterrows():
