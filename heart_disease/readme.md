@@ -5,11 +5,6 @@
  |   Work in progress  | <br>
  +---------------------+ <br>
 </p>
-
-  * Logistic Regression
-  * Decision Tree
-  * Random Forest
-
 ## Data
 The data is a modified version of the [UCI Heart Disease dataset](http://archive.ics.uci.edu/ml/datasets/heart+disease). My aim is to build a simple logistic regression classifier to predict the binary target. Then we will explore ways to fine tune that approach and build from there using decision trees and random forests.
 
