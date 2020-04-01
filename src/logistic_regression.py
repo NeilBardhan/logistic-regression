@@ -12,7 +12,6 @@ def load_data(data_file):
     return pd.read_csv(data_file, header = 'infer')
 
 def train_test_split(df, split = 0.2):
-    random.seed(1)
     test = df.sample(frac = split)
     train = df.loc[~df.index.isin(test.index)]
     return train, test
@@ -44,7 +43,6 @@ def main():
     train, test = train_test_split(df, 0.25)
     pred = baseline_random(train, test)
     logistic_metrics(test, pred)
-    return pred
 
 if __name__ == '__main__':
-    yhat = main()
+    main()
