@@ -1,0 +1,25 @@
+Goals
+-----
+
+1. Data Understanding
+
+    · Convert the data-set into whatever format makes the most sense to you.
+    · Please keep track of any statistics or findings that you think are relevant to solving the problem.
+    · Please provide a thorough analysis of the relationships between the target and the various features and also the relationships between the important features.
+
+2. Prediction / Classification
+
+    · Based on your understanding, build a quick classifier to determine what the result should be for a new customer
+    · Explain your results and the reason(s) you believe your model is valid
+
+Please provide your source code and a document outlining your findings and explanations, along with the data if you significantly transformed it.
+
+
+Data
+----
+
+ds-credit: CustomerID CheckingAccountBalance DebtsPaid SavingsAccountBalance CurrentOpenLoanApplications
+ds-app: CustomerID LoanPayoffPeriodInMonths LoanReason RequestedAmount InterestRate Co-Applicant
+ds-borrower: CustomerID YearsAtCurrentEmployer YearsInCurrentResidence Age RentOrOwnHome TypeOfCurrentEmployment NumberOfDependantsIncludingSelf
+ds-result: CustomerID WasTheLoanApproved
+
