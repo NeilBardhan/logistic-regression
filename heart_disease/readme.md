@@ -1,4 +1,4 @@
-# Heart Disease Prediction
+# Heart Disease Diagnosis - A Classification Task
 
 ## Data
 
