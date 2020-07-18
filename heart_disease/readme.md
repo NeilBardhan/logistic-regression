@@ -2,11 +2,11 @@
 
 ## Data
 
-The data is a modified version of the [UCI Heart Disease dataset](http://archive.ics.uci.edu/ml/datasets/heart+disease). My aim is to build a simple logistic regression classifier to predict the binary target. Then we will explore ways to fine tune that approach and build from there using decision trees and random forests.
+The data is a modified version of the [UCI Heart Disease dataset](http://archive.ics.uci.edu/ml/datasets/heart+disease), also known as the Cleveland Heart Dataset.
 
-From the UCI website, we get this 
+The data definitions are as follows.
 
-The `goal` field refers to the presence of heart disease in the patient. It is integer valued from 0 (no presence) to 4. Experiments with the Cleveland database have concentrated on simply attempting to distinguish **presence** (values 1,2,3,4) from **absence** (value 0). 
+The `num` field refers to the presence of heart disease in the patient and is our **target** variable. It is derived from the `goal` variable, an integer valued from 0 (no presence) to 4. Experiments with the Cleveland database have concentrated on simply attempting to distinguish **presence** (values 1,2,3,4) from **absence** (value 0). 
 
 **Attribute Information:**
 
