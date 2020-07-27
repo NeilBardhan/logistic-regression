@@ -9,7 +9,7 @@ os.chdir('..')
 DATA_PATH = os.getcwd() + '\\'
 fname = 'heart.csv'
 
-def logistic_runner(x_cols, y_col, train, test, validation):
+def logistic_wrapper(x_cols, y_col, train, test, validation):
     pass
 
 def main():
