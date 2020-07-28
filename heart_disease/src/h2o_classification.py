@@ -10,7 +10,20 @@ DATA_PATH = os.getcwd() + '\\'
 fname = 'heart.csv'
 
 def logistic_wrapper(x_cols, y_col, train, test, validation):
-    pass
+    log_reg = H2OGeneralizedLinearEstimator(family = "binomial", alpha = 1)
+    log_reg.train(x=x_cols, y= y_col, training_frame=train, validation_frame=validation, model_id="glm_logistic_regression")
+#    print(log_reg.__dict__)
+    print(log_reg.confusion_matrix())
+    print(log_reg.coef())
+#    print(log_reg.predict(test_data=test))
+#    print(log_reg.model_performance(test_data=test).rmse())
+#    log_reg.std_coef_plot()
+    log_reg_performance = log_reg.model_performance(test)
+    print(log_reg_performance)
+    predictions = log_reg.predict(test_data=test)
+    print(h2o.as_list(predictions['p1']))
+    return predictions
+
 
 def main():
     h2o.init(max_mem_size_GB=16)
@@ -31,16 +44,10 @@ def main():
     print(train.shape)
     print(test.shape)
     print(validation.shape)
-    log_reg = H2OGeneralizedLinearEstimator(family = "binomial", alpha = 1)
-    log_reg.train(x=x, y= y, training_frame=train, validation_frame=validation, model_id="glm_logistic_regression")
-#    print(log_reg.__dict__)
-    print(log_reg.confusion_matrix())
-    print(log_reg.coef())
-#    print(log_reg.predict(test_data=test))
-#    print(log_reg.model_performance(test_data=test).rmse())
-#    log_reg.std_coef_plot()
-    log_reg_performance = log_reg.model_performance(test)
-    print(log_reg_performance)
+    log_reg_predictions = logistic_wrapper(x, y, train, test, validation)
+    print("Predictions")
+    print(log_reg_predictions.__dict__) ## Check this
+    
 
 if __name__ == '__main__':
     main()
