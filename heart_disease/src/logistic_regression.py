@@ -41,7 +41,7 @@ def baseline_random(train, test):
     return predictions
 
 def main():
-    data_file = path + '\\heart_disease\\heart.csv'
+    data_file = path + '\\heart.csv'
     df = load_data(data_file)
     train, test = train_test_split(df, 0.25)
     pred = baseline_random(train, test)
